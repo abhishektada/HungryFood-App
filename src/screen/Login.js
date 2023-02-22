@@ -15,12 +15,12 @@ export default function Login() {
 
   const validationFunction = (data) => {
     let error = {};
+    //Email validation
     if (!data.email) {
       error.email = "Email is required";
       setIsSubmit(false);
-    } else if (data.email && data.password) {
-      setIsSubmit(true);
     }
+    //Password validation
     if (!data.password) {
       error.password = "Password is required";
       setIsSubmit(false);
@@ -57,7 +57,6 @@ export default function Login() {
     if (isSubmit) {
       return submit();
     } else {
-      console.log("isSubmit else ", isSubmit);
       return setIsSubmit(false);
     }
   };
@@ -91,7 +90,7 @@ export default function Login() {
               onChange={handleOnChange}
               aria-describedby="emailHelp"
             />
-            <div className="text-danger">{errors.email}</div>
+            <div className="text-black">{errors.email}</div>
           </div>
           <div className="mb-3">
             <label htmlFor="password" className="form-label">
@@ -105,7 +104,7 @@ export default function Login() {
               value={credentials.password}
               onChange={handleOnChange}
             />
-            <div className="text-danger">{errors.password}</div>
+            <div className="text-black">{errors.password}</div>
           </div>
           <div className="my-4">
             <button
