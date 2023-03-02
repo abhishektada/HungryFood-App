@@ -10,13 +10,13 @@ app.use((req, res, next) => {
     "Access-Control-Allow-headers",
     "Origin, X-Requested-With,Content-Type,Accept"
   );
-  next()
+  next();
 });
 app.use(express.json());
 app.use("/auth", require("./routes/createUser"));
 app.use("/home", require("./routes/loadData"));
 app.use("/home", require("./routes/OrderData"));
-
+app.use("/seller", require("./routes/item"));
 
 app.listen(port, () => {
   console.log(`server started at ${port}`);

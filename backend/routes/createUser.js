@@ -29,6 +29,8 @@ router.post(
           password: hashPassword,
           email: req.body.email,
           location: req.body.location,
+          restaurant: req.body.restaurant,
+          restaurantLocation: req.body.restaurantLocation,
         }).then(res.json({ success: true }));
       } else {
         res.json({ success: "match" });

@@ -1,28 +1,25 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const userSchema = new Schema({
+const itemSchema = new Schema({
+  CategoryName: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
   },
-  location: {
+  img: {
     type: String,
     required: true,
   },
-  email: {
+  description: {
     type: String,
     required: true,
   },
-  password: {
-    type: String,
-    required: true,
-  },
-  restaurant: {
-    type: String,
-  },
-  restaurantLocation: {
-    type: String,
+  options: {
+    type: Array,
   },
   date: {
     type: Date,
@@ -30,4 +27,4 @@ const userSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("user", userSchema);
+module.exports = mongoose.model("food_item", itemSchema);
